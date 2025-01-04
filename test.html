@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graviton</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+        @font-face {
+            font-family: 'Marykate';
+            src: url('Marykate-Regular.ttf') format('truetype'); /* Ensure the font file is in the same directory */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif; /* Default font */
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url('backgroundcss.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar {
+            background-color: #00BFFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 1200px;
+            border-bottom: 2px solid #FF00FF;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        .navbar-links a:hover {
+            color: #FFD700;
+        }
+
+        .tech-zone {
+            background-color: #FF00FF;
+            padding: 5px 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .welcome-text {
+            font-family: 'Marykate', cursive; /* Using the Marykate font */
+            font-size: 64px; /* Adjust font size */
+            color: white;
+            text-align: center;
+            margin-top: 50px; /* Adds space below the navbar */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Graviton Logo"> <!-- Replace 'logo.png' with your actual logo file -->
+        </div>
+        <div class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">Weekly Meeting</a>
+            <a href="#">Photos/Video</a>
+        </div>
+        <div class="tech-zone">
+            TECH ZONE OPENING
+        </div>
+    </div>
+
+    <div class="welcome-text">
+        Welcome to Graviton
+    </div>
+</body>
+</html>

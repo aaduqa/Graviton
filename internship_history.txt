@@ -1,0 +1,47 @@
+<?php
+$conn = new mysqli('localhost', 'root', '', 'login_register');
+if ($conn->connect_error) {
+    die('Connection Failed: ' . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM progress ORDER BY meetingDate DESC";
+$result = $conn->query($sql);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Progress History</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<?php include('includes/navbar.php'); ?>
+
+<div class="container mt-5">
+    <h1>Internship Progress History</h1>
+
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='project-card'>";
+            echo "<p><strong>Meeting Date:</strong> " . date('d/m/y', strtotime($row['meetingDate'])) . "</p>";
+            echo "<p><strong>Full Name:</strong> " . htmlspecialchars($row['fullName']) . "</p>";
+            echo "<p><strong>Project Name:</strong> " . htmlspecialchars($row['projectName']) . "</p>";
+            echo "<p><strong>Completed Part:</strong> " . htmlspecialchars($row['complete']) . "</p>";
+            echo "<p><strong>In Progress:</strong> " . htmlspecialchars($row['inprogress']) . "</p>";
+            echo "</div>";
+        }
+    } else {
+        echo "<p>No history available</p>";
+    }
+    $conn->close();
+    ?>
+</div>
+
+<?php include('includes/footer.php'); ?>
+</body>
+</html>
